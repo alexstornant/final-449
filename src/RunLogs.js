@@ -24,7 +24,7 @@ function RunLogs() {
   };
 
   async function addRunLog() {
-    const { data, error } = await supabase.from('runLogs').insert(newRunLog);
+    await supabase.from('runLogs').insert(newRunLog);
     setNewRunLog({date: '', distance: '', time: ''}) // reset new log
     getRunLogs(); // refresh page
     
